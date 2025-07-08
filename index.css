@@ -1,0 +1,101 @@
+/* Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fc1c03, #9e1ef4);
+  height: 100vh;
+  overflow: auto;
+}
+.icon {
+  width: 35px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* spacing between icon and text */
+}
+
+.popcorn-icon{
+  width: 90px;      /* adjust size */
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Centered container but content at top */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Top alignment */
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+/* Black box styled like mobile screen */
+.search-box {
+  width: 90%;
+  max-width: 400px;
+  min-height: 550px;
+  background-color: #e3dae8;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Scrollable if content overflows */
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: rgb(8, 8, 8);
+  margin-bottom: 20px;
+}
+
+/* Search input & button layout */
+.search-bar {
+  display: flex;
+  gap: 10px;
+}
+
+/* Input */
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* Button */
+button {
+  background-color: #ff2b9e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #e51b83;
+}
+
+button:hover {
+  background-color: #15c2c8;
+  transform: scale(1.05);
+}
+
+/* Movie Result */
+#movieResult {
+  margin-top: 20px;
+  color: rgb(6, 6, 6);
+}
