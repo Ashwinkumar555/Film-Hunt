@@ -3,9 +3,12 @@
 const searchBtn = document.getElementById('searchBtn');
 const movieInput = document.getElementById('movieInput');
 const movieResult = document.getElementById('movieResult');
-const API_KEY = 'e22d74f5';
+const watchlistBox = document.getElementById('watchlistBox');
+
+const API_KEY = '5b6ec058'; // Replace with your actual OMDB API key
 
 let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+displayWatchlist();
 
 searchBtn.addEventListener('click', () => {
   const movieName = movieInput.value.trim();
@@ -35,7 +38,6 @@ function fetchMovie(name) {
           <button onclick="addToWatchlist('${data.Title}', '${data.Poster}')">➕ Add to Watchlist</button>
           <div id="relatedMovies"></div>
         `;
-        movieResult.classList.add('fade-in');
 
         fetchRelatedMovies(relatedGenre, data.Title);
       } else {
@@ -70,6 +72,7 @@ function addToWatchlist(title, poster) {
     watchlist.push(movie);
     localStorage.setItem("watchlist", JSON.stringify(watchlist));
     alert("Added to Watchlist!");
+    displayWatchlist();
   } else {
     alert("Already in Watchlist");
   }
@@ -90,4 +93,3 @@ function displayWatchlist() {
 
   watchlistBox.innerHTML = `<h3>Your Watchlist</h3>${items}`;
 }
-
