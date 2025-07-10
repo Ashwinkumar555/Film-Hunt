@@ -93,3 +93,4 @@ function displayWatchlist() {
 
   watchlistBox.innerHTML = `<h3>Your Watchlist</h3>${items}`;
 }
+

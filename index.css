@@ -1,46 +1,44 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
 /* Background */
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #fc1c03, #9e1ef4);
-  height: 100vh;
-  overflow: auto;
-}
-.icon {
-  width: 35px;
-  vertical-align: middle;
-  margin-right: 10px;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://wallpapercave.com/wp/wp4016042.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+  position: relative;
 }
 
-h1 {
-  text-align: center;
-  color: white;
-  font-size: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px; /* spacing between icon and text */
+/* Remove film strip animation */
+.film-overlay {
+  display: none; /* Disable it completely */
 }
 
-.popcorn-icon{
-  width: 90px;      /* adjust size */
-  height: auto;
-  vertical-align: middle;
-}
-
-/* Centered container but content at top */
+/* Container */
 .container {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Top alignment */
+  align-items: flex-start;
   padding-top: 40px;
   box-sizing: border-box;
+  z-index: 1;
 }
 
-/* Black box styled like mobile screen */
+/* Mobile-style Search Box */
 .search-box {
   width: 90%;
   max-width: 400px;
@@ -49,29 +47,56 @@ h1 {
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  overflow-y: auto; /* Scrollable if content overflows */
+  overflow-y: auto;
+  z-index: 2;
+}
+
+/* Icons */
+.icon {
+  width: 35px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.popcorn-icon {
+  width: 90px;
+  height: auto;
+  vertical-align: middle;
 }
 
 /* Title */
 h1 {
   text-align: center;
-  color: rgb(8, 8, 8);
+  color: #080808;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
-/* Search input & button layout */
+/* Search bar */
 .search-bar {
   display: flex;
   gap: 10px;
 }
+.search-bar img {
+  width: auto;
+  height: auto;
+  max-width: 30px;
+}
 
-/* Input */
+/* Input Field */
 input[type="text"] {
   flex: 1;
   padding: 10px;
   border-radius: 5px;
   border: none;
   outline: none;
+}
+input[type="text"]:focus {
+  border: #060606 2px solid;
+  box-sizing: border-box;
 }
 
 /* Button */
@@ -84,18 +109,16 @@ button {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
-button:hover {
-  background-color: #e51b83;
+button:focus {
+  outline: auto;
 }
-
 button:hover {
   background-color: #15c2c8;
   transform: scale(1.05);
 }
 
-/* Movie Result */
+/* Search Results */
 #movieResult {
   margin-top: 20px;
-  color: rgb(6, 6, 6);
+  color: #060606;
 }
